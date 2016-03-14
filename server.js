@@ -3,6 +3,9 @@ var app = express();
 var path = require('path');
 var sassMiddleware = require('node-sass-middleware');
 var morgan = require('morgan');
+var mongoose = require('mongoose');
+var Url = require('./models/url');
+mongoose.connect('mongodb://localhost:27017/url-shortener');
 
 var port = process.env.PORT || 8080;
 
@@ -38,3 +41,4 @@ router.get('/parser', function(req, res) {
 app.use('/', router);
 
 app.listen(port);
+console.log("Node.js is listening on port " + port + "...");
