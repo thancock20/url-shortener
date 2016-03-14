@@ -30,12 +30,11 @@ router.get('/', function(req, res) {
   });
 });
 
-router.get('/parser', function(req, res) {
+router.get('/new/*', function(req, res) {
+  var original_url = (req.originalUrl).replace('/new/', '');
   res.json({
-    ip: req.ip,
-    lang: req.acceptsLanguages()[0],
-    os: req.useragent.os
-  });
+    original_url: original_url
+  })
 });
 
 app.use('/', router);
