@@ -50,6 +50,14 @@ router.get('/new/*', function(req, res) {
   }
 });
 
+router.get('/:url_id', function(req, res) {
+  Url.findById(req.params.url_id, function(err, url) {
+    if (err)
+      res.send(err);
+    res.redirect(url.original_url);
+  });
+});
+
 app.use('/', router);
 
 app.listen(port);
