@@ -5,7 +5,7 @@ var sassMiddleware = require('node-sass-middleware');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 var Url = require('./models/url');
-mongoose.connect('mongodb://localhost:27017/url-shortener');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/url-shortener');
 
 var port = process.env.PORT || 8080;
 
