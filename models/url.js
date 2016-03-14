@@ -1,8 +1,14 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var autoIncrement = require('mongoose-auto-increment');
+
+var connection = mongoose.createConnection('mongodb://localhost:27017/url-shortener');
+
+autoIncrement.initialize(connection);
 
 var URLSchema = new Schema({
   original_url: String
 });
 
-module.exports = mongoose.model('Url', URLSchema);
+URLSchema.plugin(autoIncrement.plugin, 'Url');
+module.exports = connection.model('Url', URLSchema);
