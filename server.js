@@ -32,9 +32,22 @@ router.get('/', function(req, res) {
 
 router.get('/new/*', function(req, res) {
   var original_url = (req.originalUrl).replace('/new/', '');
-  res.json({
-    original_url: original_url
-  })
+  if (original_url.search(/^https*:\/\/.*\..*$/) === -1) {
+    res.json({
+      error: 'invalid URL'
+    });
+  } else {
+    var url = new Url();
+    url.original_url = original_url;
+    url.save(function(err) {
+      if(err) res.send(err);
+      var hostname = req.hostname === 'localhost' ? 'localhost:' + port : req.hostname;
+      res.json({
+        original_url: original_url,
+        short_url: hostname + '/' + url.id
+      });
+    });
+  }
 });
 
 app.use('/', router);
