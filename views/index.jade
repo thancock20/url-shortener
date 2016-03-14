@@ -2,16 +2,18 @@ doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
-    title API Project: Request Header Parser
+    title API Project: URL Shortener
     link(rel="stylesheet", href="main.css", type="text/css")
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", crossorigin="anonymous")
   body
     .container
-      h1 API Project: Request Header Parser
+      h1 API Project: URL Shortener
 
-      p Implements the following User story:
+      p Implements the following User stories:
       ul
-        li I can get the IP address, language and operating system for my browser.
+        li I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+        li If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+        li When I visit that shortened URL, it will redirect me to my original link.
 
       h2 Usage:
       pre.code
@@ -23,4 +25,4 @@ html(lang="en")
 
       p Note: Example IP address is IPv6
 
-      a(href="https://github.com/thancock20/api-header-parser") See the code on Github
+      a(href="https://github.com/thancock20/url-shortener") See the code on Github
