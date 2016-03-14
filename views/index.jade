@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title API Project: Request Header Parser
+    link(rel="stylesheet", href="main.css", type="text/css")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", crossorigin="anonymous")
+  body
+    .container
+      h1 API Project: Request Header Parser
+
+      p Implements the following User story:
+      ul
+        li I can get the IP address, language and operating system for my browser.
+
+      h2 Usage:
+      pre.code
+        code #{hostname}/parser
+
+      h2 Example output:
+      pre.code
+        code { "ip": "::ffff:10.150.148.118", "lang": "en-US", "os": "Linux 64" }
+
+      p Note: Example IP address is IPv6
+
+      a(href="https://github.com/thancock20/api-header-parser") See the code on Github
