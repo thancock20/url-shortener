@@ -1,10 +1,12 @@
-# api-header-parser
-My implementation of the Header Parser API project from freeCodeCamp.
+# url-shortener
+My implementation of the URL shortener API project from freeCodeCamp.
 
-[See the app on Heroku](https://arcane-reef-31516.herokuapp.com/)
+[See the app on Heroku]()
 
-Implements the following User story:
-*  I can get the IP address, language and operating system for my browser.
+Implements the following User stories:
+* I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+* If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+* When I visit that shortened URL, it will redirect me to my original link.
 
 ## Getting Started
 ```
@@ -21,5 +23,4 @@ node server.js
 Note: Example IP address is IPv6.
 
 ### Additional notes
-* [express-useragent](https://github.com/biggora/express-useragent) is used to get the operating system.
 * Since this was a fairly simple project, I experimented by adding jade and sass (using [node-sass-middleware](https://github.com/sass/node-sass-middleware)).
