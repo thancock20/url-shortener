@@ -14,13 +14,14 @@ npm install
 node server.js
 ```
 
-## Usage:
-`http://localhost:8080/parser`
+## Example Usage (New short URL):
+`http://localhost:8080/new/http://www.google.com`
 
 ## Example output:
-`{ "ip": "::1", "lang": "en-US", "os": "Linux 64" }`
+`{ "original_url": "http://www.google.com", "short_url": "http://localhost:8080/1" }`
 
-Note: Example IP address is IPv6.
+## Usage:
+`http://localhost:8080/1`
 
-### Additional notes
-* Since this was a fairly simple project, I experimented by adding jade and sass (using [node-sass-middleware](https://github.com/sass/node-sass-middleware)).
+## Will redirect to:
+`http://www.google.com`
