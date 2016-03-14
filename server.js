@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var useragent = require('express-useragent');
 var sassMiddleware = require('node-sass-middleware');
 var morgan = require('morgan');
 
@@ -27,8 +26,6 @@ router.get('/', function(req, res) {
     hostname: req.hostname === 'localhost' ? 'localhost:' + port : req.hostname
   });
 });
-
-router.use(useragent.express());
 
 router.get('/parser', function(req, res) {
   res.json({
