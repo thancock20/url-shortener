@@ -15,14 +15,20 @@ html(lang="en")
         li If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
         li When I visit that shortened URL, it will redirect me to my original link.
 
-      h2 Usage:
+      h2 Example Usage (New Short URL):
       pre.code
-        code #{hostname}/parser
+        code #{hostname}/new/http://www.google.com
 
       h2 Example output:
       pre.code
-        code { "ip": "::ffff:10.150.148.118", "lang": "en-US", "os": "Linux 64" }
-
-      p Note: Example IP address is IPv6
+        code { "original_url": "http://www.google.com", "short_url": "#{hostname}/1" }
+        
+      h2 Usage:
+      pre.code
+        code #{hostname}/1
+        
+      h2 Will Redirect To:
+      pre.code
+        code http://www.google.com
 
       a(href="https://github.com/thancock20/url-shortener") See the code on Github

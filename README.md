@@ -14,14 +14,14 @@ npm install
 node server.js
 ```
 
-## Example Usage (New short URL):
+## Example Usage (New Short URL):
 `http://localhost:8080/new/http://www.google.com`
 
-## Example output:
+## Example Output:
 `{ "original_url": "http://www.google.com", "short_url": "http://localhost:8080/1" }`
 
 ## Usage:
 `http://localhost:8080/1`
 
-## Will redirect to:
+## Will Redirect To:
 `http://www.google.com`
