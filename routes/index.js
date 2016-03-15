@@ -35,7 +35,8 @@ router.get('/:url_id', function(req, res) {
   Url.findById(req.params.url_id, function(err, url) {
     if (err)
       res.send(err);
-    res.redirect(url.original_url);
+    if (url)
+      res.redirect(url.original_url);
   });
 });
 
