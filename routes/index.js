@@ -7,7 +7,7 @@ var port = process.env.PORT || 8080;
 
 router.get('/', function(req, res) {
   res.render('index', {
-    hostname: req.hostname === 'localhost' ? 'localhost:' + port : req.hostname
+    hostname: req.hostname === 'localhost' ? 'http://localhost:' + port : req.protocol + '://' + req.hostname
   });
 });
 
@@ -22,7 +22,7 @@ router.get('/new/*', function(req, res) {
     url.original_url = original_url;
     url.save(function(err) {
       if(err) res.send(err);
-      var hostname = req.hostname === 'localhost' ? 'localhost:' + port : req.hostname;
+      var hostname = req.hostname === 'localhost' ? 'http://localhost:' + port : req.protocol + '://' + req.hostname;
       res.json({
         original_url: original_url,
         short_url: hostname + '/' + url.id
