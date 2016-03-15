@@ -1,7 +1,7 @@
 # url-shortener
 My implementation of the URL shortener API project from freeCodeCamp.
 
-[See the app on Heroku]()
+[See the app on Heroku](https://sh-url.herokuapp.com)
 
 Implements the following User stories:
 * I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
